@@ -34,10 +34,16 @@ while True:
         for i in result:
             print(i)
     elif(choice==3):
-        print("search a student")
+        print("search a employe")
+        empcode=input("enter a code:-")
+        sql="SELECT * FROM `employe` WHERE `empcode`="+empcode
+        mycursor.execute(sql)
+        result=mycursor.fetchall()
+        print(result)
+
     elif(choice==4):
-        print("update student")
+        print("update employe")
     elif(choice==5):
-        print("delet student")    
+        print("delet employe")    
     elif(choice==6):
         break                
