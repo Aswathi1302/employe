@@ -10,24 +10,29 @@ while True:
     print("5. delete employe")
     print("6.exit")
 
-    choice=int(input("enter your choice"))
+    choice=int(input("enter your choice:-"))
     if(choice==1):
         print("student enter selected")
-        empcode=input("enter a code")
-        empname=input("enter name")
-        designation=input("enter designation")
-        salary=input("enter salary ")
-        compney_name=input("enter compney_name")
-        mobile=input("enter mobile")
-        email=input("enter email")
-        password=input("enter password ")
+        empcode=input("enter a code:")
+        empname=input("enter name:-")
+        designation=input("enter designation:-")
+        salary=input("enter salary:- ")
+        compney_name=input("enter compney_name:-")
+        mobile=input("enter mobile:-")
+        email=input("enter email:-")
+        password=input("enter password:- ")
         sql="INSERT INTO `employe`(`empcode`, `empname`, `designation`, `salary`, `compney_name`, `mobile`, `email`, `password`) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
         data=(empcode,empname,designation,salary,compney_name,mobile,email,password)
         mycursor.execute(sql,data)
         mydb.commit()
         print("insert successfully.......")
     elif(choice==2):
-        print("view student")
+        print("view employe")
+        sql="SELECT * FROM `employe` "
+        mycursor.execute(sql)
+        result=mycursor.fetchall()
+        for i in result:
+            print(i)
     elif(choice==3):
         print("search a student")
     elif(choice==4):
