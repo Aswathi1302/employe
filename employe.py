@@ -57,6 +57,11 @@ while True:
         print("Data updated successfully....")
 
     elif(choice==5):
-        print("delet employe")    
+        print("delete employe")   
+        empcode=input("enter the employe code:")
+        sql="DELETE FROM `employe` WHERE empcode="+empcode
+        mycursor.execute(sql)
+        mydb.commit()
+        print("Data deleted successfully..") 
     elif(choice==6):
         break                
